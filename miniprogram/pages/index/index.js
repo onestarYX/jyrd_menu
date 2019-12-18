@@ -1,16 +1,41 @@
 //index.js
 const app = getApp()
 
+class Dish {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getPrice() {
+    return this.price;
+  }
+}
+
+// These instances are just for test.
+const d1 = new Dish("蒜爆鱼", "30");
+const d2 = new Dish("黑腿鸡", "35");
+const d3 = new Dish("米椒豆腐", "12");
+
 Page({
   data: {
+    /*
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     logged: false,
     takeSession: false,
     requestResult: '',
-    
+    */
+
+    menu: [d1, d2, d3],
+
   },
 
+  /*
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -117,5 +142,6 @@ Page({
       }
     })
   },
+  */
 
 })

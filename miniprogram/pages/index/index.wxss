@@ -1,9 +1,17 @@
 /**index.wxss**/
 
 .title {
-  background-color: red;
+  background-color: orange;
   margin-top: 20rpx;
   margin-bottom: 40rpx;
+}
+
+.menuCell {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: lightcyan;
+  flex-direction: column;
 }
 
 

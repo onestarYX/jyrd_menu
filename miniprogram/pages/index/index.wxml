@@ -2,12 +2,12 @@
 
 <!-- Template for menu table cell -->
 <template name="menuCell">
-  <view>
+  <view class="menuCell">
     <cover-image>
     </cover-image>
 
-    <text>菜名</text>
-    <text>价格</text>
+    <text>{{name}}</text>
+    <text>{{price}}</text>
 
     <button>
       +
@@ -23,7 +23,8 @@
 
   <view>
     <scroll-view scroll-y="true">
-      <template is="menuCell"></template>
+      <!-- Here why is the getter not working? -->
+      <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price}}"></template>
     </scroll-view>
   </view>
 
