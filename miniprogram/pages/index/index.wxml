@@ -1,9 +1,30 @@
 <!--index.wxml-->
+
+<!-- Template for menu table cell -->
+<template name="menuCell">
+  <view>
+    <cover-image>
+    </cover-image>
+
+    <text>菜名</text>
+    <text>价格</text>
+
+    <button>
+      +
+    </button>
+  </view>
+</template>
+
 <view class="container">
 
-  <view>
+  <view class="title">
     <text>欢迎来到鸡鱼肉蛋用餐</text>
   </view>
 
+  <view>
+    <scroll-view scroll-y="true">
+      <template is="menuCell"></template>
+    </scroll-view>
+  </view>
 
 </view>
