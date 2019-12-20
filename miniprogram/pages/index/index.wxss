@@ -7,13 +7,65 @@
 }
 
 .menuCell {
+  display: flex;
   padding-top: 10rpx;
   padding-bottom: 10rpx;
+  width: 500rpx;
+  height: 140rpx;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: lightcyan;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+#addNumBtn {
+  background-color: rosybrown;
+  width: 100rpx;
+}
+
+.dishName {
+  width: 140rpx;
+  height: 50rpx;
+}
+
+.dishPrice {
+
+}
+
+
+.testButton2 {
+  background-color: blue;
+  width: 20rpx;
+}
+
+.testView {
+  background-color: yellow;
+}
+
+.testView button {
+  width: 30rpx;
+  background-color: red;
+}
+
+.testView #id {
+  width: 30rpx;
+  background-color: black;
+}
+
+.testView .testButton {
+  width: 30rpx;
+  background-color: blue;
+}
+
+.testButton {
+  background-color: yellowgreen;
+  width: 300rpx;
+}
 
 /*page {
   background: #f6f6f6;
