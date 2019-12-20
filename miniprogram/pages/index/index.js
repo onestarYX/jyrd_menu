@@ -5,6 +5,7 @@ class Dish {
   constructor(name, price) {
     this.name = name;
     this.price = price;
+    this.amount = 0;
   }
 
   getName() {
@@ -34,6 +35,10 @@ Page({
     menu: [d1, d2, d3],
 
   },
+
+  increAmount: function() {
+    
+  }
 
   /*
   onLoad: function() {

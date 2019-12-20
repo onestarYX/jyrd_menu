@@ -7,34 +7,76 @@
 }
 
 .menuCell {
+  background: lightcyan;
   display: flex;
+  flex-direction: row;
   padding-top: 10rpx;
   padding-bottom: 10rpx;
+  padding-left: 10rpx;
   width: 500rpx;
   height: 140rpx;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: lightcyan;
-  flex-direction: row;
-  align-items: flex-start;
 }
 
 .avatar {
+  margin-right: 10rpx;
   width: 140rpx;
   height: 140rpx;
+}
+
+.itemDetailPanel {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+}
+
+.addAmountPanel {
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  padding-right: 10rpx;
+  padding-left: 10rpx;
+  padding-bottom: 10rpx;
+  margin-left: 60rpx;
+  height: 80rpx;
+}
+
+#decNumBtn {
+  background-color: rosybrown;
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  padding-bottom: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 
 #addNumBtn {
   background-color: rosybrown;
-  width: 100rpx;
-}
-
-.dishName {
-  width: 140rpx;
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  padding-bottom: 10rpx;
+  width: 50rpx;
   height: 50rpx;
 }
 
-.dishPrice {
+#amount {
+  background-color: red;
+  padding-top: 17rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  height: 50rpx;
+}
 
+.dishName {
+  margin-bottom: 40rpx;
+}
+
+.dishPrice {
+  font-size: 120%;
 }
 
 
