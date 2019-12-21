@@ -36,8 +36,30 @@ Page({
 
   },
 
-  increAmount: function() {
-    
+  increAmount: function(e) {
+    console.log("Debug message: ");
+    console.log(e.target.dataset.index);
+    const index = e.target.dataset.index;
+    const temp = this.data.menu;
+    temp[index].amount = temp[index].amount + 1;
+    this.setData({
+      menu: this.data.menu
+    });
+  },
+
+  decreAmount: function (e) {
+    console.log("Debug message: ");
+    console.log(e.target.dataset.index);
+    const index = e.target.dataset.index;
+    const temp = this.data.menu;
+    if (temp[index].amount == 0) {
+      return;
+    } else {
+      temp[index].amount = temp[index].amount - 1;
+      this.setData({
+        menu: this.data.menu
+      });
+    }
   }
 
   /*

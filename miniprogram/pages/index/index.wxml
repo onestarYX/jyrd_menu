@@ -14,9 +14,9 @@
     </view>
 
     <view class="addAmountPanel">
-      <button id="decNumBtn">-</button>
+      <button id="decNumBtn" bindtap="decreAmount" data-index="{{index}}">-</button>
       <text id="amount">{{amount}}</text>
-      <button id="addNumBtn">+</button>    
+      <button id="addNumBtn" bindtap="increAmount" data-index="{{index}}">+</button>
     </view>
 
   </view>
@@ -31,7 +31,7 @@
   <view>
     <scroll-view scroll-y="true">
       <!-- Here why is the getter not working? -->
-      <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount}}"></template>
+      <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index }}"></template>
       
       <view class="testView">
         <button class="testButton" id="id">
