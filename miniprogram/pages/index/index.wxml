@@ -28,19 +28,24 @@
     <text>欢迎来到鸡鱼肉蛋用餐</text>
   </view>
 
-  <view>
-    <scroll-view scroll-y="true">
-      <!-- Here why is the getter not working? -->
-      <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index }}"></template>
-      
-      <view class="testView">
-        <button class="testButton" id="id">
-        </button>
-      </view>
+  
+  <scroll-view scroll-y="true" class="menuTable">
+    <!-- Here why is the getter not working? -->
+    <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index }}"></template>
+    
+    <!-- Just for test and study -->
+    <view class="testView">
+      <button class="testButton" id="id">
+      </button>
+    </view>
+    <button class="testButton2"></button>
 
-      <button class="testButton2"></button>
+  </scroll-view>
 
-    </scroll-view>
+  <view class="cartPanel">
+    
   </view>
+
+
 
 </view>

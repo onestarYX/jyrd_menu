@@ -1,4 +1,8 @@
 /**index.wxss**/
+.container {
+  background-color: lightgoldenrodyellow;
+}
+
 
 .title {
   background-color: orange;
@@ -13,18 +17,19 @@
   padding-top: 10rpx;
   padding-bottom: 10rpx;
   padding-left: 10rpx;
-  width: 500rpx;
   height: 140rpx;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .avatar {
+  flex: 1;
   margin-right: 10rpx;
   width: 140rpx;
   height: 140rpx;
 }
 
 .itemDetailPanel {
+  flex: 4;
   background-color: bisque;
   display: flex;
   flex-direction: column;
@@ -32,6 +37,7 @@
 }
 
 .addAmountPanel {
+  flex: 1;
   background-color: aqua;
   display: flex;
   flex-direction: row;
@@ -39,7 +45,6 @@
   padding-right: 10rpx;
   padding-left: 10rpx;
   padding-bottom: 10rpx;
-  margin-left: 60rpx;
   height: 80rpx;
 }
 
@@ -78,6 +83,35 @@
 .dishPrice {
   font-size: 120%;
 }
+
+.cartPanel {
+  background-color: salmon;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 120rpx;
+  align-items: stretch;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .testButton2 {
