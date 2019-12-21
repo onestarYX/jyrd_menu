@@ -18,9 +18,9 @@ class Dish {
 }
 
 // These instances are just for test.
-const d1 = new Dish("蒜爆鱼", "30");
-const d2 = new Dish("黑腿鸡", "35");
-const d3 = new Dish("米椒豆腐", "12");
+const d1 = new Dish("蒜爆鱼", 30);
+const d2 = new Dish("黑腿鸡", 35);
+const d3 = new Dish("米椒豆腐", 12);
 
 Page({
   data: {
@@ -33,15 +33,17 @@ Page({
     */
 
     menu: [d1, d2, d3],
-
+    cost: 0,
   },
 
   increAmount: function(e) {
     const index = e.target.dataset.index;
     const temp = this.data.menu;
     temp[index].amount = temp[index].amount + 1;
+
     this.setData({
-      menu: this.data.menu
+      menu: this.data.menu,
+      cost: this.data.cost + temp[index].price,
     });
   },
 
@@ -53,7 +55,8 @@ Page({
     } else {
       temp[index].amount = temp[index].amount - 1;
       this.setData({
-        menu: this.data.menu
+        menu: this.data.menu,
+        cost: this.data.cost - temp[index].price,
       });
     }
   }

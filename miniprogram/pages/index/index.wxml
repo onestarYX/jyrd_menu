@@ -43,7 +43,11 @@
   </scroll-view>
 
   <view class="cartPanel">
-    
+    <text id="cost">总价：{{cost}}</text>
+
+    <button id="payBtn">微信支付</button>
+
+    <button id="cart">购物车</button>
   </view>
 
 

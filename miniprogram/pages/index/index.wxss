@@ -3,7 +3,6 @@
   background-color: lightgoldenrodyellow;
 }
 
-
 .title {
   background-color: orange;
   margin-top: 20rpx;
@@ -88,10 +87,32 @@
   background-color: salmon;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
   width: 100%;
-  height: 120rpx;
-  align-items: stretch;
-  
+  height: 150rpx;
+  padding-left: 50rpx;
+  padding-right: 10rpx;
+}
+
+#cost {
+  font-size: x-large;
+  background-color: darkorange;
+  flex: 3;
+}
+
+#payBtn {
+  background-color: greenyellow;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  flex: 1.3;
+}
+
+#cart {
+  background-color: gainsboro;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  flex: 1;
 }
 
 
