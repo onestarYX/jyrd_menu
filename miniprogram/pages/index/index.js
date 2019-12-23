@@ -34,6 +34,7 @@ Page({
 
     menu: [d1, d2, d3],
     cost: 0,
+    showCart: false,
   },
 
   increAmount: function(e) {
@@ -59,7 +60,77 @@ Page({
         cost: this.data.cost - temp[index].price,
       });
     }
-  }
+  },
+
+  toggleCartPage: function (e) {
+    if (this.data.showCart == false) {
+      this.showModal();
+    } else {
+      this.hideModal();
+    }
+  },
+
+  /* This part of code is partially credit to the post on https://blog.csdn.net/a772116804/article/details/90482628 */
+  showModal: function () {
+    console.log("showCart: false -> true");
+
+    var that = this;
+
+    var animation = wx.createAnimation({
+      // 动画持续时间
+      duration: 500,
+      // 定义动画效果，当前是匀速
+      timingFunction: 'linear'
+    });
+
+    that.animation = animation;
+
+    animation.translateY(1000).step();
+
+    that.setData({
+      // 通过export()方法导出数据
+      animationData: animation.export(),
+      // 改变view里面的Wx：if
+      showCart: true,
+    });
+
+    // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动 滑动时间
+    setTimeout(function () {
+      animation.translateY(0).step()
+      that.setData({
+        animationData: animation.export(),
+      })
+    }, 100);
+
+  },
+
+  /* This part of code is partially credit to the post on https://blog.csdn.net/a772116804/article/details/90482628 */
+  hideModal: function (e) {
+    console.log("showCart: true -> false");
+
+    var that = this;
+
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'linear'
+    });
+
+    that.animation = animation;
+
+    animation.translateY(700).step();
+
+    that.setData({
+      animationData: animation.export()
+    });
+
+    setTimeout(function () {
+      animation.translateY(0).step()
+      that.setData({
+        animationData: animation.export(),
+        showCart: false,
+      })
+    }, 500);
+  },
 
   /*
   onLoad: function() {

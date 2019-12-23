@@ -43,9 +43,9 @@
     -->
   </scroll-view>
 
-  <view class="shadow"></view>
-  
-  <view class="cartItemList">
+  <view class="shadow" wx:if="{{showCart}}" bindtap="hideModal"></view>
+
+  <view class="cartItemList" wx:if="{{showCart}}" animation="{{animationData}}">
   
   </view>
 
@@ -54,7 +54,7 @@
 
     <button id="payBtn">微信支付</button>
 
-    <button id="cart">购物车</button>
+    <button id="cart" bindtap="toggleCartPage">购物车</button>
   </view>
 
 
