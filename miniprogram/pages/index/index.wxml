@@ -34,13 +34,20 @@
     <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index }}"></template>
     
     <!-- Just for test and study -->
+    <!--
     <view class="testView">
       <button class="testButton" id="id">
       </button>
     </view>
     <button class="testButton2"></button>
-
+    -->
   </scroll-view>
+
+  <view class="shadow"></view>
+  
+  <view class="cartItemList">
+  
+  </view>
 
   <view class="cartPanel">
     <text id="cost">总价：{{cost}}</text>
