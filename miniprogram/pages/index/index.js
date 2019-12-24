@@ -2,11 +2,12 @@
 const app = getApp()
 
 class Dish {
-  constructor(name, price) {
+  constructor(name, price, category) {
     this.name = name;
     this.price = price;
     this.amount = 0;
     this.inCart = false;
+    this.category = category;
   }
 
   getName() {
@@ -19,9 +20,17 @@ class Dish {
 }
 
 // These instances are just for test.
-const d1 = new Dish("蒜爆鱼", 30);
-const d2 = new Dish("黑腿鸡", 35);
-const d3 = new Dish("米椒豆腐", 12);
+const d1 = new Dish("蒜爆鱼", 30, "特色菜");
+const d2 = new Dish("黑腿鸡", 35, "特色菜");
+const d3 = new Dish("米椒豆腐", 12, "特色菜");
+
+const d4 = new Dish("酸辣土豆丝", 10, "时令鲜蔬");
+const d5 = new Dish("手撕包菜", 12, "时令鲜蔬");
+const d6 = new Dish("香辣白菜", 10, "时令鲜蔬");
+const d7 = new Dish("木耳青菜", 12, "时令鲜蔬");
+
+const d8 = new Dish("米饭", 1, "主食");
+const d9 = new Dish("馒头", 2, "主食");
 
 Page({
   data: {
@@ -33,10 +42,22 @@ Page({
     requestResult: '',
     */
 
-    menu: [d1, d2, d3],
+    category1: [d1, d2, d3],
+    category2: [d4, d5, d6, d7],
+    category3: [d8, d9],
+    categoryList: ["特色菜", "时令鲜蔬", "主食"],
+    currCategory: "特色菜",
     cost: 0,
     showCart: false,
     cart: [],
+  },
+
+  toggleCategory: function(e) {
+    const index = e.target.dataset.index;
+    this.data.currCategory = this.data.categoryList[index];
+    this.setData({
+      currCategory: this.data.currCategory,
+    });
   },
 
   increAmount: function(e) {
@@ -44,11 +65,21 @@ Page({
     const array = e.target.dataset.array;
     console.log(array);
 
-    // Question: is this passing pointer?
-    if (array == "menu") {
-      var temp = this.data.menu;
-    } else {
-      var temp = this.data.cart;
+    // Question: is this passing pointer? I guess yes.
+    // Temp is used to update the amount of the current array the user is editing.
+    switch (array) {
+      case "category1":
+        var temp = this.data.category1;
+        break;
+      case "category2":
+        var temp = this.data.category2;
+        break;
+      case "category3":
+        var temp = this.data.category3;
+        break;
+      case "cart":
+        var temp = this.data.cart;
+        break;
     }
     temp[index].amount = temp[index].amount + 1;
 
@@ -60,7 +91,9 @@ Page({
     }
 
     this.setData({
-      menu: this.data.menu,
+      category1: this.data.category1,
+      category2: this.data.category2,
+      category3: this.data.category3,
       cost: this.data.cost + temp[index].price,
       cart: cart,
     });
@@ -71,10 +104,19 @@ Page({
   decreAmount: function (e) {
     const index = e.target.dataset.index;
     const array = e.target.dataset.array;
-    if (array == "menu") {
-      var temp = this.data.menu;
-    } else {
-      var temp = this.data.cart;
+    switch (array) {
+      case "category1":
+        var temp = this.data.category1;
+        break;
+      case "category2":
+        var temp = this.data.category2;
+        break;
+      case "category3":
+        var temp = this.data.category3;
+        break;
+      case "cart":
+        var temp = this.data.cart;
+        break;
     }
 
     var cart = this.data.cart;
@@ -93,13 +135,16 @@ Page({
       }
 
       this.setData({
-        menu: this.data.menu,
+        category1: this.data.category1,
+        category2: this.data.category2,
+        category3: this.data.category3,
         cost: this.data.cost,
         cart: cart,
       });
     }
     console.log(this.data.cart);
   },
+
 
   toggleCartPage: function (e) {
     if (this.data.showCart == false) {
@@ -170,6 +215,10 @@ Page({
       })
     }, 500);
   },
+
+
+
+
 
   /*
   onLoad: function() {

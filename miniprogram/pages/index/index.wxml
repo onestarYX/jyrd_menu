@@ -28,25 +28,35 @@
     <text>欢迎来到鸡鱼肉蛋用餐</text>
   </view>
 
-  
-  <scroll-view scroll-y="true" class="menuTable">
-    <!-- Here why is the getter not working? -->
-    <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'menu' }}"></template>
-    
-    <!-- Just for test and study -->
-    <!--
-    <view class="testView">
-      <button class="testButton" id="id">
-      </button>
-    </view>
-    <button class="testButton2"></button>
-    -->
-  </scroll-view>
+  <view class="menu">
+    <scroll-view scroll-y="true" class="categoryList">
+      <view wx:for="{{categoryList}}" class="categoryCell" bindtap="toggleCategory" data-index="{{index}}">
+        <text bindtap="toggleCategory" data-index="{{index}}">{{item}}</text>
+      </view>
+    </scroll-view>
+
+    <scroll-view scroll-y="true" class="menuTable">
+      <!-- Here why is the getter not working? -->
+      <template wx:if="{{currCategory == '特色菜'}}" wx:for="{{category1}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'category1'}}"></template>
+      
+      <template wx:if="{{currCategory == '时令鲜蔬'}}" wx:for="{{category2}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'category2'}}"></template>
+
+      <template wx:if="{{currCategory == '主食'}}" wx:for="{{category3}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'category3'}}"></template>
+      <!-- Just for test and study -->
+      <!--
+      <view class="testView">
+        <button class="testButton" id="id">
+        </button>
+      </view>
+      <button class="testButton2"></button>
+      -->
+    </scroll-view>
+  </view>
 
   <view class="shadow" wx:if="{{showCart}}" bindtap="hideModal"></view>
 
   <view class="cartItemList" wx:if="{{showCart}}" animation="{{animationData}}">
-    <scroll-view>
+    <scroll-view scroll-y="true" class="cartScrollView">
       <template wx:for="{{cart}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'cart'}}" ></template>
     </scroll-view>
   </view>
