@@ -41,8 +41,15 @@ Page({
 
   increAmount: function(e) {
     const index = e.target.dataset.index;
+    const array = e.target.dataset.array;
+    console.log(array);
+
     // Question: is this passing pointer?
-    var temp = this.data.menu;
+    if (array == "menu") {
+      var temp = this.data.menu;
+    } else {
+      var temp = this.data.cart;
+    }
     temp[index].amount = temp[index].amount + 1;
 
     var cart = this.data.cart;
@@ -53,21 +60,29 @@ Page({
     }
 
     this.setData({
-      menu: temp,
+      menu: this.data.menu,
       cost: this.data.cost + temp[index].price,
       cart: cart,
     });
+
     console.log(this.data.cart);
   },
 
   decreAmount: function (e) {
     const index = e.target.dataset.index;
-    var temp = this.data.menu;
+    const array = e.target.dataset.array;
+    if (array == "menu") {
+      var temp = this.data.menu;
+    } else {
+      var temp = this.data.cart;
+    }
+
     var cart = this.data.cart;
     if (temp[index].amount == 0) {
       return;
     } else {
       temp[index].amount = temp[index].amount - 1;
+      this.data.cost = this.data.cost - temp[index].price;
       if (temp[index].amount == 0) {
         temp[index].inCart = false;
         for (var i = 0; i < cart.length; i++) {
@@ -76,9 +91,10 @@ Page({
           }
         }
       }
+
       this.setData({
-        menu: temp,
-        cost: this.data.cost - temp[index].price,
+        menu: this.data.menu,
+        cost: this.data.cost,
         cart: cart,
       });
     }

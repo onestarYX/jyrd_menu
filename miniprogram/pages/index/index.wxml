@@ -14,9 +14,9 @@
     </view>
 
     <view class="addAmountPanel">
-      <button id="decNumBtn" bindtap="decreAmount" data-index="{{index}}">-</button>
+      <button id="decNumBtn" bindtap="decreAmount" data-index="{{index}}" data-array="{{array}}">-</button>
       <text id="amount">{{amount}}</text>
-      <button id="addNumBtn" bindtap="increAmount" data-index="{{index}}">+</button>
+      <button id="addNumBtn" bindtap="increAmount" data-index="{{index}}" data-array="{{array}}">+</button>
     </view>
 
   </view>
@@ -31,7 +31,7 @@
   
   <scroll-view scroll-y="true" class="menuTable">
     <!-- Here why is the getter not working? -->
-    <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index }}"></template>
+    <template wx:for="{{menu}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'menu' }}"></template>
     
     <!-- Just for test and study -->
     <!--
@@ -46,7 +46,9 @@
   <view class="shadow" wx:if="{{showCart}}" bindtap="hideModal"></view>
 
   <view class="cartItemList" wx:if="{{showCart}}" animation="{{animationData}}">
-  
+    <scroll-view>
+      <template wx:for="{{cart}}" is="menuCell" data="{{name: item.name, price: item.price, amount: item.amount, index: index, array: 'cart'}}" ></template>
+    </scroll-view>
   </view>
 
   <view class="cartPanel">

@@ -108,10 +108,10 @@
   height: 50%;
   position: fixed;
   bottom: 12%;
-  opacity: 0.5;
   z-index: 2;
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
+  padding-top: 30rpx;
 }
 
 
