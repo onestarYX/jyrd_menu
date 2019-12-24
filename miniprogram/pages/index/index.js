@@ -6,6 +6,7 @@ class Dish {
     this.name = name;
     this.price = price;
     this.amount = 0;
+    this.inCart = false;
   }
 
   getName() {
@@ -35,31 +36,53 @@ Page({
     menu: [d1, d2, d3],
     cost: 0,
     showCart: false,
+    cart: [],
   },
 
   increAmount: function(e) {
     const index = e.target.dataset.index;
-    const temp = this.data.menu;
+    // Question: is this passing pointer?
+    var temp = this.data.menu;
     temp[index].amount = temp[index].amount + 1;
 
+    var cart = this.data.cart;
+    if (temp[index].inCart == false) {
+      temp[index].inCart = true;
+      // Same question with this: passing pointer?
+      cart.push(temp[index]);
+    }
+
     this.setData({
-      menu: this.data.menu,
+      menu: temp,
       cost: this.data.cost + temp[index].price,
+      cart: cart,
     });
+    console.log(this.data.cart);
   },
 
   decreAmount: function (e) {
     const index = e.target.dataset.index;
-    const temp = this.data.menu;
+    var temp = this.data.menu;
+    var cart = this.data.cart;
     if (temp[index].amount == 0) {
       return;
     } else {
       temp[index].amount = temp[index].amount - 1;
+      if (temp[index].amount == 0) {
+        temp[index].inCart = false;
+        for (var i = 0; i < cart.length; i++) {
+          if (cart[i].name == temp[index].name) {
+            cart.splice(i, 1);
+          }
+        }
+      }
       this.setData({
-        menu: this.data.menu,
+        menu: temp,
         cost: this.data.cost - temp[index].price,
+        cart: cart,
       });
     }
+    console.log(this.data.cart);
   },
 
   toggleCartPage: function (e) {
