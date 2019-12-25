@@ -1,5 +1,7 @@
 //index.js
-const app = getApp()
+const app = getApp();
+const db = wx.cloud.database();
+const orders = db.collection('orders');
 
 class Dish {
   constructor(name, price, category) {
@@ -146,6 +148,35 @@ Page({
   },
 
 
+  upload: function(e) {
+    if (this.data.cart.length == 0){
+      console.log("cart is empty");
+      return;
+    }
+
+    const dishes = [];
+    for (var i = 0; i < this.data.cart.length; i++) {
+      const dish = {"amount": this.data.cart[i].amount, "name": this.data.cart[i].name};
+      dishes.push(dish);
+    }
+
+    const order = {
+      cost: this.data.cost,
+      dishes: dishes,
+      numPeople: 2,
+      tableID: "2",
+    };
+
+    orders.add({
+      data: order,
+      success: function(res) {
+        console.log(res)
+      }
+    })
+
+  },
+
+
   toggleCartPage: function (e) {
     if (this.data.showCart == false) {
       this.showModal();
@@ -220,7 +251,7 @@ Page({
 
 
 
-  
+  /*  
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -327,5 +358,6 @@ Page({
       }
     })
   },
+  */
   
 })

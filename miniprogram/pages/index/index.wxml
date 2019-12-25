@@ -26,6 +26,8 @@
 
   <view class="title">
     <text>欢迎来到鸡鱼肉蛋用餐</text>
+
+    <button id="testNav">我是商家</button>
   </view>
 
   <view class="menu">
@@ -64,7 +66,7 @@
   <view class="cartPanel">
     <text id="cost">总价：{{cost}}</text>
 
-    <button id="payBtn">微信支付</button>
+    <button id="payBtn" bindtap="upload">确认订单</button>
 
     <button id="cart" bindtap="toggleCartPage">购物车</button>
   </view>
