@@ -28,6 +28,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+
 .categoryCell {
   padding-left: 10rpx;
   padding-top: 25rpx;
@@ -35,6 +36,11 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: aqua;
 }
+
+.hover {
+  background-color: gray;
+}
+
 
 .menuTable {
   flex: 4;

@@ -30,7 +30,7 @@
 
   <view class="menu">
     <scroll-view scroll-y="true" class="categoryList">
-      <view wx:for="{{categoryList}}" class="categoryCell" bindtap="toggleCategory" data-index="{{index}}">
+      <view wx:for="{{categoryList}}" class="categoryCell" bindtap="toggleCategory" data-index="{{index}}" hover-class="hover">
         <text bindtap="toggleCategory" data-index="{{index}}">{{item}}</text>
       </view>
     </scroll-view>

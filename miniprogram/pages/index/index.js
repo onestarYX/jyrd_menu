@@ -220,7 +220,7 @@ Page({
 
 
 
-  /*
+  
   onLoad: function() {
     if (!wx.cloud) {
       wx.redirectTo({
@@ -327,6 +327,5 @@ Page({
       }
     })
   },
-  */
-
+  
 })
