@@ -1,2 +1,21 @@
 <!--miniprogram/pages/orderListPage.wxml-->
-<text>miniprogram/pages/orderListPage.wxml</text>
+<scroll-view class="container">
+  <block wx:for="{{orders}}">
+    <view class="orderCard">
+      <view class="title">
+        <text id="tableID">{{orders[index]["tableID"]}}号桌</text>
+        <text id="totalCost">总价：¥{{orders[index]["cost"]}}</text>
+      </view>
+
+      <view class="footnote">
+        <text id="timestamp">下单时间：{{orders[index].timestamp}}</text>
+      </view>
+    
+      <view class="orderList" wx:for="{{orders[index].dishes}}">
+        <view class="dishCell">
+          <text id="dishName">{{item.name}} x{{item.amount}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

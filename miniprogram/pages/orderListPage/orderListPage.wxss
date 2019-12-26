@@ -1,1 +1,60 @@
 /* miniprogram/pages/orderListPage.wxss */
+.container {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.orderCard {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20rpx;
+}
+
+.title {
+  background-color: violet;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  align-items: baseline;
+}
+
+#tableID {
+  margin-right: 50%;
+  font-size: 45rpx;
+}
+
+#totalCost {
+  font-size: 35rpx;
+}
+
+.footnote {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+}
+
+#timestamp {
+  color: grey;
+}
+
+.orderList {
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.dishCell {
+  padding-left: 5%;
+}

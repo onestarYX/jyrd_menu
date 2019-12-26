@@ -27,7 +27,7 @@
   <view class="title">
     <text>欢迎来到鸡鱼肉蛋用餐</text>
 
-    <button id="testNav">我是商家</button>
+    <button id="testNav" bindtap="navToKitchen">我是商家</button>
   </view>
 
   <view class="menu">

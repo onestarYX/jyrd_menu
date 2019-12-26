@@ -54,6 +54,12 @@ Page({
     cart: [],
   },
 
+  navToKitchen: function(e) {
+    wx.navigateTo({
+      url: '../orderListPage/orderListPage',
+    });
+  },
+
   toggleCategory: function(e) {
     const index = e.target.dataset.index;
     this.data.currCategory = this.data.categoryList[index];
@@ -165,12 +171,14 @@ Page({
       dishes: dishes,
       numPeople: 2,
       tableID: "2",
+      timestamp: (new Date()).toLocaleString(),
+      status: "inProgress",
     };
 
     orders.add({
       data: order,
       success: function(res) {
-        console.log(res)
+        console.log(res);
       }
     })
 

@@ -1,18 +1,39 @@
 // miniprogram/pages/orderListPage.js
+const app = getApp();
+const db = wx.cloud.database();
+const ordersCloud = db.collection('orders');
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    orders: [],
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var that = this;
+    ordersCloud.where({
+      status: "inProgress",
+    }).get({
+      success: function(res) {
+        that.setData({
+          orders: res.data,
+        });
+        console.log(that.data.orders);
+      },
 
+    });
+
+    // ordersCloud.doc('e8f863ba5e04bb54077913ab55d3ce1c').get({
+    //   success: function(res) {
+    //     console.log(res.data);
+    //   },
+    // });
   },
 
   /**
