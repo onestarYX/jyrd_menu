@@ -1,0 +1,51 @@
+/* miniprogram/pages/register/register.wxss */
+.container {
+  background-color: aliceblue;
+}
+
+.wxInfo {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20rpx;
+}
+
+.userAvatar {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.userName {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.infoForm {
+  width: 100%;
+}
+
+.oneLineField {
+  background-color: violet;
+  width: 100%;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
+.inputTitle {
+  background-color: lightblue;
+  padding-left: 20rpx;
+}
+
+.normalInput {
+  margin-top: 10rpx;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-left: none;
+  border-right: none;
+  padding-left: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}

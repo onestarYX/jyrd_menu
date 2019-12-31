@@ -1,0 +1,30 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="container">
+  <view class="wxInfo">
+    <!-- <open-data type="userAvatarUrl"></open-data>
+    <open-data type="userNickName" id="nickName"></open-data> -->
+
+    <cover-image class="userAvatar" src="{{userAvatar}}"></cover-image>
+    <text class="userName">{{userName}}</text>
+  </view>
+
+  <form bindsubmit="formSubmit" bindreset="formReset" class="infoForm">
+    <view class="oneLineField">
+      <text class="inputTitle">请输入饭店名称</text>
+      <input class="normalInput" name="restaurantName"></input>
+    </view>
+
+    <view class="oneLineField">
+      <text class="inputTitle">请输入负责人姓名</text>
+      <input class="normalInput" name="ownerName"></input>
+    </view>
+
+    <view class="oneLineField">
+      <text class="inputTitle">请输入餐桌数量（日后可修改）</text>
+      <input class="normalInput" type="number" name="numOfTable"></input>
+    </view>
+
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </form>
+</view>

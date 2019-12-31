@@ -1,0 +1,5 @@
+<!--miniprogram/pages/register/register.wxml-->
+<view class="container">
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGetUserInfo">使用微信授权注册</button>
+  <button bindtap="getAuthSettings">获得授权状态</button>
+</view>

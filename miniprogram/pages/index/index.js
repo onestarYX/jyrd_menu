@@ -56,7 +56,7 @@ Page({
 
   navToKitchen: function(e) {
     wx.navigateTo({
-      url: '../orderListPage/orderListPage',
+      url: '../welcome/welcome',
     });
   },
 

@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/register/register",
+    "pages/welcome/welcome",
+
+    "pages/initial/initial",
+
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
